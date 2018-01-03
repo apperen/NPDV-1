@@ -29,7 +29,7 @@ for item in questions do
 
 	until (choice == "да" || choice == "ДА" || choice == "нет" || choice == "НЕТ")
 		sleep 0.5
-		puts "Принимаются только ответы ДА или НЕТ. Программа чувствительна к регистру."
+		puts "Принимаются только ответы ДА или НЕТ (да или нет)"
 		choice = gets.chomp
 	end
 
