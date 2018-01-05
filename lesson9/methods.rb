@@ -1,5 +1,5 @@
 #метод с одним параметром - имя
-def say_hi (name)
+def say_hi(name)
 	puts "Привет, #{name}, как твои дела?"
 end
 
