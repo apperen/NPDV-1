@@ -5,7 +5,7 @@ def applique(quantity, row)
   unit_starting = ""
   while (count < quantity)
       unit_addendum = "#{row}"
-      unit_starting = unit_starting + unit_addendum
+      unit_starting += unit_addendum
       count += 1
   end
 
@@ -15,7 +15,7 @@ end
 
 
 puts "Какую строчку склеиваем?"
-row = STDIN.gets.chomp
+row = STDIN.gets.encode("UTF-8").chomp
 
 puts "Сколько вам раз?"
 quantity = gets.to_i.abs
