@@ -26,3 +26,4 @@ puts "#{skolko} " +
 	sklonenie(skolko, "пошёл", "пошли", "пошли") + 
 	" купаться в море!"
 
+#based on the book of Agatha Christie
