@@ -29,4 +29,4 @@ while (count <= 3)
 	count += 1
 end
 
-puts "Вы проиграли, увы."
+abort "Вы проиграли, увы."
