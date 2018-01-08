@@ -3,9 +3,21 @@ def sklonenie (number, krokodil, krokodila, krokodilov)
     number = 0
   end
 
+  value = nil
+
+  if (number >= 100000 && number <= 999999)
+  	value = 
+  elsif (number >= 10000 && number <= 99999)
+  	value = 
+  elsif (number >= 1000 && number <= 9999)
+  	value = 
+  elsif (number >= 100 && number <= 999)
+  	value = 
+  	
+
   ostatok = number % 10
 
-  if (number == 11 || number == 12 || number == 13 || number == 14)
+  if (number >= 11 && number <= 14)
       return krokodilov
   else
     if (ostatok == 1)
@@ -24,8 +36,8 @@ end
 
 skolko = ARGV[0].to_i
 
-until (skolko <= 110 && skolko >= 0) do
-  puts "Пожалуйста, введите человеческое число."
+until (skolko < 1000000 && skolko >= 0) do
+  puts "Пожалуйста, введите человеческое число. (Меньше миллиона)"
   skolko = STDIN.gets.to_i
 end
 
