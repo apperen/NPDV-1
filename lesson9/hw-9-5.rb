@@ -16,7 +16,7 @@ def etching(choice, key, victory, count)
 	end
 end
 
-key = rand(15)
+key = rand(16)
 victory = "Ура, вы выиграли! Это действительно число #{key}"
 
 puts "Загадано число от 0 до 16, отгадайте какое?"
