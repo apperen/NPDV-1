@@ -21,7 +21,6 @@ def sausage_width(width, how_many_cut_off)
 		puts "Это ломает логику. Возвращаю Вам колбасу полностью."
 		puts sausage_array.to_s
 	else
-		puts "мухаха"
 		sausage_array.pop(sausage_array.size - how_many_cut_off)
 		puts "Вот Ваш кусок:"
 		puts sausage_array.to_s
