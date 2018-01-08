@@ -3,20 +3,20 @@ def sklonenie (number, krokodil, krokodila, krokodilov)
     number = 0
   end
 
-  value = nil
+ 
 
-  if (number >= 100000 && number <= 999999)
-  	value = 
-  elsif (number >= 10000 && number <= 99999)
-  	value = 
-  elsif (number >= 1000 && number <= 9999)
-  	value = 
-  elsif (number >= 100 && number <= 999)
-  	value = 
+  if (number >= 100000)
+  	ostatok = number % 100000
+  elsif (number >= 10000)
+  	ostatok = number % 10000
+  elsif (number >= 1000)
+  	ostatok = number % 1000
+  elsif (number >= 100)
+  	ostatok = number % 100
+  else
+  	ostatok = number % 10
+  end
   	
-
-  ostatok = number % 10
-
   if (number >= 11 && number <= 14)
       return krokodilov
   else
