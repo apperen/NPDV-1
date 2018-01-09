@@ -5,14 +5,14 @@ deal = "Договорились! Ура! Сделка завершена!
 def vibor(choice)
   until (choice == 1 || choice == 2)
     puts "Пожалуйста, выберите одно из предложенных действий."
-    choice = gets.abs.to_i
+    choice = gets.to_i
   end
 end
 
 def test_num(user_price)
   while (user_price == 0)
     puts "Пожалуйста, введите адекватное значение."
-    user_price = gets.abs.to_i
+    user_price = gets.to_i.abs
   end
 end
 
@@ -24,7 +24,7 @@ def no_deal(program_price, user_price, deal, action) #задача - увели�
     if (action == "купить")
       until (user_price >= 2000) do
         puts "Имейте совесть!"
-        user_price = gets.abs.to_i
+        user_price = gets.to_i.abs
       end
        if (user_price > (program_price - 1001))
          abort deal
@@ -32,7 +32,7 @@ def no_deal(program_price, user_price, deal, action) #задача - увели�
     else
       until (user_price <= 18000) do
         puts "Имейте совесть!"
-        user_price = gets.abs.to_i
+        user_price = gets.to_i.abs
       end
       if (user_price < (program_price + 1001))
          abort deal
@@ -48,16 +48,16 @@ def no_deal(program_price, user_price, deal, action) #задача - увели�
       number = (user_price - ((user_price - program_price) / 1.2))
     end
 
-    puts "Могу предложить за #{number.abs.abs.to_i} руб. Устраивает?"
+    puts "Могу предложить за #{number.abs.to_i} руб. Устраивает?"
     puts "1. Да // 2. Нет"
   
-    choice = gets.abs.to_i
+    choice = gets.to_i
     vibor(choice)
     if (choice == 1)
       signal = true
     else
        puts "Укажите свою цену."
-        user_price = gets.abs.to_i
+        user_price = gets.to_i.abs
         test_num(user_price)
     end  
   end
@@ -73,7 +73,7 @@ puts "Привет! Вы хотите что-то купить или прода
 1. Купить
 2. Продать
 "
-choice = gets.abs.to_i
+choice = gets.to_i
 vibor(choice)
 
 if (choice == 1)
@@ -92,14 +92,14 @@ puts "Хорошо, я могу #{operate} #{product}. Только для Ва�
 1. Да
 2. Нет" 
 
-choice = gets.abs.to_i
+choice = gets.to_i
 vibor(choice)
 
 if (choice == 1)
   abort deal
 else
   puts "Укажите свою цену."
-  user_price = gets.abs.to_i
+  user_price = gets.to_i.abs
   test_num(user_price)
 end
 
