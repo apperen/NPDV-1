@@ -1,6 +1,6 @@
 puts "Игра ОРЁЛ или РЕШКА"
 
-balance = 10000000
+balance = 1000
 puts "Ваш стартовый баланс: #{balance}"
 
 count = 0
@@ -8,35 +8,36 @@ arr = [
 	"орёл",
 	"решка"
 ]
-rate = 1
+
+rate = (balance / 2)#((balance - (balance / 6)) / 1000)
 stop = false
 while (stop == false) do
 
 	# puts "Введите сумму ставки:"
 	# rate = gets.to_i.abs
 
-	until (rate <= balance) do
+	until (rate <= balance || rate >= 1) do
 		puts "Ставка не может быть больше баланса"
-		puts "Ставок сделано: #{count}"
+		abort "Ставок сделано: #{count}"
 		rate = gets.to_i.abs
 		until (rate == 0)
 			puts "Ставка не может быть равна 0" 
 			rate = gets.to_i.abs
 		end
 	end
+	
 	puts
-	puts
-	puts "Ставка: #{rate}"
+	puts "Ставка: #{rate.to_i}"
 	# puts "ОРЁЛ или РЕШКА?"
-	program_result = rand(2)
-	user_choice = rand(2) #STDIN.gets.chomp
+	# program_result = rand(2)
+	user_choice = rand(9) #STDIN.gets.chomp
 
-	until (user_choice == 0 || user_choice == 1)
-	#until (user_choice == "1" || user_choice == "2")
-		puts "Нажмите 1 + Ввод для выбора варианта ОРЁЛ"
-		puts "Нажмите 2 + Ввод для выбора варианта РЕШКА"
-		user_choice = STDIN.gets.chomp
-	end
+	# until (user_choice == 0 || user_choice == 1)
+	# #until (user_choice == "1" || user_choice == "2")
+	# 	puts "Нажмите 1 + Ввод для выбора варианта ОРЁЛ"
+	# 	puts "Нажмите 2 + Ввод для выбора варианта РЕШКА"
+	# 	user_choice = STDIN.gets.chomp
+	# end
 
 	if (user_choice == "1")
 		# puts "Ваш выбор: #{arr[0]}"
@@ -46,20 +47,23 @@ while (stop == false) do
 		user_result = 1
 	end
 	# puts "Выбор программы: #{arr[program_result]}"
-	if (user_result == program_result)
+	if (user_choice >= 1 && user_result <= 6)
+		#if (user_result == program_result)
 
-		balance += (rate * 0.8)
-		rate = 1
-		puts
-		puts "Совершенно верно!"
-		puts "Баланс: #{balance}"
-		puts "Прибыль: #{rate * 0.8}"
+		balance += (rate * 0.9)
+		# rate = 1
+		puts "+!"
+		puts "Баланс: #{balance.to_i}"
+		puts "Ставок сделано: #{count}"
+		rate = (balance / 2)
+		# puts "Прибыль: #{rate * 0.8}"
 	else
 		balance -= rate
-		rate = (rate * 2.2) 
-		puts
-		puts "Увы, повезёт в другой раз."
-		puts "Ваш баланс: #{balance}"
+		# rate = (rate * 2.5) 
+		puts "-"
+		puts "Баланс: #{balance.to_i}"
+		puts "Ставок сделано: #{count}"
+		rate = (balance / 2)
 		if (balance <= 0)
 			abort
 		end
@@ -74,7 +78,7 @@ while (stop == false) do
 	# end
 
 	count += 1
-	# sleep 0.1
+	sleep 0.5
 end 
 
 puts "Ставок сделано: #{count}"
