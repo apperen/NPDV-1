@@ -1,3 +1,7 @@
+#продавец года
+deal = "Договорились! Ура! Сделка завершена!
+Видите, произвести торговую операцию оказалось довольно просто!"
+
 def vibor(choice)
   until (choice == 1 || choice == 2)
     puts "Пожалуйста, выберите одно из предложенных действий."
@@ -12,66 +16,53 @@ def test_num(user_price)
   end
 end
 
-def no(program_price, user_price, action)
-  if (action == "купить")
-    while (program_price != user_price)
-      if (program_price > user_price)
-        program_price = user_price + (user_price / 2)
-        if (program_price > 10000)
-          program_price = (10000 - 500)
-        end
-
-        puts "Ну, это уже слишком. Давайте за #{program_price}. Устраивает?"
-        puts "1. Да // 2. Нет "
-        
-        choice = gets.to_i
-        vibor(choice)
-        if (choice == 1)
-          user_price = program_price
-        else
-          puts "Укажите свою цену."
-          user_price = gets.to_i
-          test_num(user_price)
-        end
-      else
-        puts "Ура! Сделка завершена!"
+def no_deal(program_price, user_price, deal, action) #задача - увеличить цену
+  number = nil
+  signal = false
+  while (signal != true) do
+    
+    if (action == "купить")
+      until (user_price >= 2000) do
+        puts "Имейте совесть!"
+        user_price = gets.to_i
       end
-    end
-
-    puts "Ура! Сделка завершена!"
-  else
-    until (user_price < 50000)
-      puts "Имейте совесть!"
-      user_price = gets.to_i
-      test_num(user_price)
-    end
-
-    while (program_price != user_price)
-      if (program_price < user_price)
-        program_price = user_price - (user_price / 2)
-        if (program_price < 10000)
-          program_price = (10000 + 500)
-        end
-
-        puts "Ну, это уже слишком. Давайте за #{program_price}. Устраивает?"
-        puts "1. Да // 2. Нет "
-        
-        choice = gets.to_i
-        vibor(choice)
-        if (choice == 1)
-          user_price = program_price
-        else
-          puts "Укажите свою цену."  
-          user_price = gets.to_i
-          test_num(user_price)
-        end
-      else
-        puts "Ура! Сделка завершена!"
+       if (user_price > (program_price - 1001))
+         abort deal
+       end
+    else
+      until (user_price <= 18000) do
+        puts "Имейте совесть!"
+        user_price = gets.to_i
       end
+      if (user_price < (program_price + 1001))
+         abort deal
+       end
     end
 
-    puts "Ура! Сделка завершена!"
+    puts "Меня не очень устраивает Ваше предложение."
+
+    if (action == "купить")  
+      number = (user_price + ((program_price - user_price) / 1.2))
+    else
+      
+      number = (user_price - ((user_price - program_price) / 1.2))
+    end
+
+    puts "Могу предложить за #{number.abs.to_i} руб. Устраивает?"
+    puts "1. Да // 2. Нет"
+  
+    choice = gets.to_i
+    vibor(choice)
+    if (choice == 1)
+      signal = true
+    else
+       puts "Укажите свою цену."
+        user_price = gets.to_i
+        test_num(user_price)
+    end  
   end
+
+  abort deal
 end
 
 program_price = 10000
@@ -105,28 +96,15 @@ choice = gets.to_i
 vibor(choice)
 
 if (choice == 1)
-  puts "Ура! Сделка завершена!"
+  abort deal
 else
   puts "Укажите свою цену."
   user_price = gets.to_i
   test_num(user_price)
-
-  if (action == "купить")
-    if (user_price > program_price)
-      puts "Ура! Сделка завершена!"
-    else
-      no(program_price, user_price, action)
-    end
-
-  else
-
-    if (user_price < program_price)
-      puts "Ура! Сделка завершена!"
-    else
-      no(program_price, user_price, action)
-    end
-  end
 end
 
-
-
+if (user_price == program_price)
+  abort deal
+else
+  no_deal(program_price, user_price, deal, action)
+end
