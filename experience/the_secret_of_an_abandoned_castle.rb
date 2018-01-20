@@ -700,12 +700,12 @@ elsif (time > 16)
 	puts arrow [125]
 elsif (time > 23 && time < 4 || time == 0)
 	puts arrow [126]
-<end></end>
+end
 
 puts
 sleep 1
 puts arrow [1]
-puts arrow <div 2=""></div>
+puts arrow [2]
 puts arrow [3]
 choice = gets.chomp
 if (choice == "4")
