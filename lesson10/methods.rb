@@ -13,7 +13,7 @@ def get_letters #преобразует в массив слово, которо
 end
 # puts get_letters.to_s - проверка
 
-def get_user_input #принимает букву от пользователя
+def get_user_input # принимает букву от пользователя
 	letter = ""
 
 	while (letter == "" || letter.size > 1)
