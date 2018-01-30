@@ -1,24 +1,32 @@
 #test
+array = [8371, 5980, 3825, 14502, 21385, 92730]
 
-# a = "ABC"
-# b = "D"
+for item in array do
+	if ((item % 15) == 0)
+		puts "Число #{item} делится на 15."
+	end	
+end
 
-# c = a + b
-
-# puts c
-
-
-# array = [1, 2, 3, 4, 5]
-# puts array.size
-
-# puts
-# puts
-
-# number = gets.chomp
-# number.split("-")
-# puts.number
-#test
-
-aa = 50
-bb = aa + (aa/2)
-puts bb
+# variable = [
+# "w",
+# "h",
+# "a",
+# "t",
+# "'",
+# "s",
+# " ",
+# "g",
+# "o",
+# "i",
+# "n",
+# "g",
+# " ",
+# "o",
+# "n",
+# "?"
+# ]
+   
+ variable = "{what's going on?:;##754658$}"
+ var = variable.gsub(/[^\d]/, '').to_i
+ puts var
+# puts perem.join(",")
