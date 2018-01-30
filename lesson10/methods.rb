@@ -36,7 +36,7 @@ def check_result(user_input, letters, good_letters, bad_letters)
 		good_letters << user_input
 
 		if (letters.uniq.size == good_letters.size) 
-		#если слово отгадано
+		# если слово отгадано
 			return 1
 		else
 			return 0
