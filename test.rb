@@ -13,4 +13,5 @@
 #  puts var # puts perem.join(",")
 puts "enter word"
 number = gets.to_s
-puts number.downcase
+number.downcase!
+puts number
