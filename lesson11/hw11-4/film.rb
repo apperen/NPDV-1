@@ -1,14 +1,14 @@
 class Film
-	def initialize(author, result, arr_filmez)
-		@new_author = author
-		@new_result = arr_filmez.sample
+	def initialize(author, films)
+		@author = author
+		@films = films.sample
 	end
 
-	def choice_aut
-		return @new_author
+	def author_for_me
+		return @author
 	end
 
-	def choice_film
-		return @new_result
+	def film_for_me
+		return @films
 	end
 end

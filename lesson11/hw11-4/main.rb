@@ -1,47 +1,19 @@
 require './film.rb'
-puts "Привет! Я помогу тебе выбрать фильм для досуга!"
-puts " Фильмы какого режиссера вы хотите посмотреть?"
+puts "Фильмы какого режиссера вы хотите посмотреть?"
+author = gets.encode("UTF-8").chomp
+sleep 0.4
 
-sleep 0.5
-arr_filmez = []
-author = gets.chomp
-
-sleep 0.5
-puts "Ок. Введите свой любимый фильм этого режиссёра"
-filmez = gets.chomp.to_s
-while (filmez == "")
-	puts "Нельзя оставлять это поле пустым. Попробуйте ещё раз."
-	filmez = gets.chomp.to_s
-	arr_filmez << filmez
+count = 3
+films = []
+while (count > 0) do
+	puts "Какой-нибудь его хороший фильм?"
+	films << gets.encode("UTF-8").chomp
+	count -= 1
 end
 
-sleep 0.5
-puts "Хорошо. Введите ещё один хороший фильм."
-filmez = gets.chomp.to_s
-while (filmez == "")
-	puts "Нельзя оставлять это поле пустым. Попробуйте ещё раз."
-	filmez = gets.chomp.to_s
-	arr_filmez << filmez
-end
-
-sleep 0.5
-puts "Осталось немного. Последний фильм."
-filmez = gets.chomp.to_s
-while (filmez == "")
-	puts "Нельзя оставлять это поле пустым. Попробуйте ещё раз."
-	filmez = gets.chomp.to_s
-	arr_filmez << filmez
-end
-puts "тыгыдым"
-puts arr_filmez.to_s
-
-sleep 0.5
-result = "1"
-film = Film.new(author, result, arr_filmez)
-film.choice_aut
-film.choice_film
+film = Film.new(author, films)
 
 
-puts "И сегодня вечером рекомендую посмотреть: #{new_result}" 
-puts "Режиссера: #{new_author}"
 
+puts "И сегодня вечером рекомендую посмотреть: #{film.film_for_me}."
+puts "Режиссера: #{film.author_for_me}."
