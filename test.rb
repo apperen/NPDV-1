@@ -11,7 +11,27 @@
 #  variable = "{what's going on?:#754658$}"
 #  var = variable.gsub(/[^\d]/, '').to_i
 #  puts var # puts perem.join(",")
-puts "enter word"
-number = gets.to_s
-number.downcase!
-puts number
+# puts "enter word"
+# number = gets.to_s
+# number.downcase!
+# puts number
+
+# number = 876853
+# result = (number / 2).to_f
+# puts result
+# int = (result.to_f - result.to_i)
+
+# if int == 0
+# 	puts "четное"
+# else
+# 	puts "нечетное"
+# end
+
+hui = Time.now
+day_week = hui.wday
+	
+if (day_week == 6 || day_week == 7)
+	puts "+"
+else
+	puts "-"
+end
