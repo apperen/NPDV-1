@@ -1,4 +1,5 @@
 # #test
+require './lesson11/lesson/bridge.rb'
 # array = [8371, 5980, 3825, 14502, 21385, 92730]
 
 # for item in array do
@@ -16,22 +17,12 @@
 # number.downcase!
 # puts number
 
-# number = 876853
-# result = (number / 2).to_f
-# puts result
-# int = (result.to_f - result.to_i)
-
-# if int == 0
-# 	puts "четное"
-# else
-# 	puts "нечетное"
-# end
-
-hui = Time.now
-day_week = hui.wday
+# day_week = hui.wday
 	
-if (day_week == 6 || day_week == 7)
-	puts "+"
-else
-	puts "-"
-end
+# if (day_week == 6 || day_week == 7)
+# 	puts "+"
+# else
+# 	puts "-"
+# end
+bridge = Bridge.new 
+bridge.open
