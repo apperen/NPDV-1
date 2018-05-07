@@ -43,9 +43,10 @@ films3 = Film.new(author, films)
 #на этот моменте count должен быть == 0
 count += 1
 
+puts
+puts "Итак, результаты:"
 
 while (count < 4) do
-	puts "Итак, результаты:"
 	puts "№#{count.to_s}: #{human1.say_name}. Возраст: #{human1.say_age.to_s}"
 	puts "Любимый фильм: #{films1.film_for_me}. Режиссёр: #{films1.author_for_me}"
 	count += 1
