@@ -1,5 +1,5 @@
 # #test
-require './lesson11/lesson/bridge.rb'
+require './lesson11/lesson/bridge.rb' #работает как Include в PHP
 # array = [8371, 5980, 3825, 14502, 21385, 92730]
 
 # for item in array do
