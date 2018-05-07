@@ -12,9 +12,11 @@ while (count > 0) do
 	puts "Осталось набрать людей для старта: #{count}"
 	puts "Введите имя и нажмите Enter:"
 	firstname << gets.chomp 
+	puts
 
 	puts "Введите фамилию и нажмите Enter:"
 	lastname << gets.chomp 
+	puts
 
 	count -= 1 
 end
@@ -50,9 +52,12 @@ while (count < 4) do
 
 	if (count == 3)
 		human2, human1 = human1, human2
+		films2, films1 = films1, films2
 		human1, human3 = human3, human1
+		films1, films3 = films3, films1
 	elsif (count == 2)
 		human1, human2 = human2, human1
+		films1, films2 = films2, films1
 	end
 end
 
