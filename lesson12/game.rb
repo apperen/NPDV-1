@@ -21,7 +21,7 @@ class Game
 	#1. спросить букву с консоли
 	#2. проверить результат
 	def ask_next_letter
-		puts "Введите следующую букву:"
+		puts "Введите букву:"
 
 		letter = STDIN.gets.encode("UTF-8").chomp
 

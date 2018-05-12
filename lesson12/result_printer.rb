@@ -27,6 +27,8 @@ class ResultPrinter
 			puts "Ошибки (#{game.errors}): #{game.bad_letters.join(", ")}"
 		end
 
+		print_viselitsa(game.errors)
+
 		counter_errors = 7-game.errors
 		if (game.errors >= 7)
 			puts "Вы проиграли =("
@@ -56,6 +58,126 @@ class ResultPrinter
 
 	def cls
 		system "clear" or system "cls"
+	end
+
+	def print_viselitsa(errors)
+    # оператор case, аналогичен набору if (см. например http://www.programbeginner.ru/?p=337)
+    case errors
+    when 0
+      	puts "
+          _______
+          |/
+          |
+          |
+          |
+          |
+          |
+          |
+          |
+        __|________
+        |         |
+        "
+    when 1
+        puts "
+          _______
+          |/
+          |     ( )
+          |
+          |
+          |
+          |
+          |
+          |
+        __|________
+        |         |
+        "
+    when 2
+        puts "
+          _______
+          |/
+          |     ( )
+          |      |
+          |
+          |
+          |
+          |
+          |
+        __|________
+        |         |
+        "
+    when 3
+        puts "
+          _______
+          |/
+          |     ( )
+          |      |_
+          |        \\
+          |
+          |
+          |
+          |
+        __|________
+        |         |
+        "
+    when 4
+        puts "
+          _______
+          |/
+          |     ( )
+          |     _|_
+          |    /   \\
+          |
+          |
+          |
+          |
+        __|________
+        |         |
+        "
+    when 5
+        puts "
+          _______
+          |/
+          |     ( )
+          |     _|_
+          |    / | \\
+          |      |
+          |
+          |
+          |
+        __|________
+        |         |
+        "
+
+    when 6
+        puts "
+          _______
+          |/
+          |     ( )
+          |     _|_
+          |    / | \\
+          |      |
+          |     / \\
+          |    /   \\
+          |
+        __|________
+        |         |
+        "
+    when 7
+        puts "
+          _______
+          |/     |
+          |     (_)
+          |     _|_
+          |    / | \\
+          |      |
+          |     / \\
+          |    /   \\
+          |
+        __|________
+        |         |
+        "
+
+		end
 	end
 
 end
